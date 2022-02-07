@@ -23,15 +23,15 @@ result = [[str(ele) for ele in sub] for sub in matrix]
 print((result))
 for i in range(26):
     for j in range(5):
-        result[i][j] = "{0:.00%}".format(matrix[i][j] / sum_of_each_slot[j])
+        result[i][j] = "{:.0%}".format(matrix[i][j] / sum_of_each_slot[j])
 
 row_of_letters = [chr(65 + x) for x in range(26)]
 
 for i in range(26):
     result[i].insert(0, row_of_letters[i])
     sum = 0
-    for j in range(1,5):
+    for j in range(1,6):
         sum += float(result[i][j].replace('%','')) / 500
-    result[i].append( "{0:.00%}".format(sum))
+    result[i].append( "{:.0%}".format(sum))
 
 pprint(result)
